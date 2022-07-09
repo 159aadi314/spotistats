@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { AccessToken, logout} from './spotify';
 // import styled from 'styled-components';
-import {Login,Profile, TopArtists, TopTracks} from './pages';
+import {Login,Profile, TopArtists, TopTracks, Playlists} from './pages';
 import React  from 'react';
 // import { catchErrors } from './utils';
 import {
@@ -62,7 +62,7 @@ function App() {
               <Route path="/top-artists" element={<TopArtists/>} />
               <Route path="/top-tracks" element={<TopTracks/>} />
               <Route path="/playlists/:id" element={<h1>Playlist</h1>} />
-              <Route path="/playlists" element={<h1>Playlists</h1>} />
+              <Route path="/playlists" element={<Playlists />} />
                 
               <Route path="/" element={
                 <Profile/>

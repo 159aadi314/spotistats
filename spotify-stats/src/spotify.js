@@ -167,5 +167,5 @@ export const getUserProfile = () => axios.get('/me');
  * @returns {Promise}
  */
  export const getTopTracks = (time_range = 'medium_term') => {
-  return axios.get(`/me/top/tracks?time_range=${time_range}`);
+  return axios.get(`/me/top/tracks?time_range=${time_range}&limit=50`);
 };
