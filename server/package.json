@@ -4,17 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "server": "nodemon index.js",
+    "client": "cd .. && cd spotify-stats && npm start",
+    "postinstall": "cd .. && cd spotify-stats && npm install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
+    "babel-plugin-styled-components": "^2.0.7",
+    "concurrently": "^7.2.2",
     "nodemon": "^2.0.19"
   }
 }

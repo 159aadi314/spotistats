@@ -1,14 +1,14 @@
 const express =require('express');  // express module
 const querystring = require('querystring'); // querystring module
 const app= express();   // express app
-
+const cors= require('cors');
 const axios=require('axios');   // axios module
 
 app.get('/',(req,res)=>{    // get request
     res.send('Hello World');
 
 })
-
+app.use(cors());
 require('dotenv').config();     // dotenv module to read .env file
 const ClientID=process.env.Client_ID;   // Client_ID from .env file
 const ClientSecret=process.env.Client_Secret;   // Client_Secret from .env file
@@ -34,7 +34,7 @@ app.get('/login',(req,res)=>{   // get request to login
         redirect_uri:RedirectURI,
         response_type:'code',
         state:state,
-        scope:'user-read-private user-read-email',
+        scope:'user-read-private user-read-email user-top-read',
         show_dialog:true
     })
     res.redirect('https://accounts.spotify.com/authorize?'+queryParams);  // redirect to spotify login page
@@ -59,22 +59,19 @@ app.get('/callback',(req,res)=>{    // get request to callback
     })
     .then(response => {
         if (response.status === 200) {
+            const { access_token, refresh_token, expires_in } = response.data;
     
-          const { access_token, token_type } = response.data;
-    
-          const { refresh_token } = response.data;
-
-          axios.get(`http://localhost:8888/refresh_token?refresh_token=${refresh_token}`)
-            .then(response => {
-              res.send(`<pre>${JSON.stringify(response.data, null, 2)}</pre>`);
-            })
-            .catch(error => {
-              res.send(error);
+            const queryParams = querystring.stringify({
+              access_token,
+              refresh_token,
+              expires_in,
             });
     
-        } else {
-          res.send(response);
-        }
+            res.redirect(`http://localhost:3000/?${queryParams}`);
+    
+          } else {
+            res.redirect(`/?${querystring.stringify({ error: 'invalid_token' })}`);
+          }
       })
       .catch(error => {
         res.send(error);
