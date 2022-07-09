@@ -31,7 +31,7 @@ Part Three: User's Playlists
 
 ## Search functionality and individual tracks pages
 
---
+---
 
 ## Future additions to be made
 
