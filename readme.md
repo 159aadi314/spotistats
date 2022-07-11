@@ -36,7 +36,7 @@ Part Three: User's Playlists
 
 ## Individual PlayList Page
 
-[!PlaylistPage](assets/Playlist.png)
+![PlaylistPage](assets/Playlist.png)
 
 
 ---
