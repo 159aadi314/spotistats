@@ -131,41 +131,32 @@ export const AccessToken= getAccessToken();
 
 
 
-/** 
- * Get the user's profile
- */
 
-
-/**
- * Get Current User's Profile
- * @returns {Promise}
- */
 export const getUserProfile = () => axios.get('/me');
 
-/**
- * Get a List of Current User's Playlists
- * @returns {Promise}
- */
+
  export const getCurrentUserPlaylists = (limit = 20) => {
   return axios.get(`/me/playlists?limit=${limit}`);
 };
 
 
-/**
- * Get a User's Top Artists and Tracks
- * @param {string} time_range - 'short_term' (last 4 weeks) 'medium_term' (last 6 months) or 'long_term' (calculated from several years of data and including all new data as it becomes available). Defaults to 'short_term'
- * @returns {Promise}
- */
+
  export const getTopArtists = (time_range = 'medium_term') => {
   return axios.get(`/me/top/artists?time_range=${time_range}`);
 };
 
 
-/**
- * Get a User's Top Tracks
- * @param {string} time_range - 'short_term' (last 4 weeks) 'medium_term' (last 6 months) or 'long_term' (calculated from several years of data and including all new data as it becomes available). Defaults to 'short_term'
- * @returns {Promise}
- */
+
  export const getTopTracks = (time_range = 'medium_term') => {
   return axios.get(`/me/top/tracks?time_range=${time_range}&limit=50`);
 };
+
+
+
+ export const getPlaylistById = playlist_id => {
+  return axios.get(`/playlists/${playlist_id}`);
+}
+
+export const getTrack = Track_id => {
+  return axios.get(`/tracks/${Track_id}`);
+}

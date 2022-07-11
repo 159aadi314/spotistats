@@ -7,6 +7,8 @@ const TrackList = ({ tracks }) => (
     {tracks && tracks.length ? (
       <StyledTrackList>
         {tracks.map((track, i) => (
+            <a href ={`/track/${track.id}`}>
+
           <li className="track__item" key={i}>
             <div className="track__item__num">{i + 1}</div>
             <div className="track__item__title-group">
@@ -27,6 +29,7 @@ const TrackList = ({ tracks }) => (
                   ))}
                 </div>
               </div>
+              
             </div>
             <div className="track__item__album overflow-ellipsis">
               {track.album.name}
@@ -34,7 +37,9 @@ const TrackList = ({ tracks }) => (
             <div className="track__item__duration">
               {formatDuration(track.duration_ms)}
             </div>
+            {/* </a> */}
           </li>
+          </a>
         ))}
       </StyledTrackList>
     ) : (

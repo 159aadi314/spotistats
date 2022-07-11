@@ -30,6 +30,14 @@ Part Three: User's Playlists
 ---
 
 ## Search functionality and individual tracks pages
+![Tracks Page](assets/TracksPage.png)
+* Note that user can also play the song on this page using the iframe presented
+---
+
+## Individual PlayList Page
+
+[!PlaylistPage](assets/Playlist.png)
+
 
 ---
 

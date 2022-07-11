@@ -20,7 +20,7 @@ const Profile = () => {
       setTopArtists(userTopArtists.data);
       const userTopTracks = await getTopTracks();
       setTopTracks(userTopTracks.data);
-      // console.log(userTopArtists.data);
+      console.log(userTopArtists.data);
     };
 
     catchErrors(fetchData());
@@ -52,6 +52,7 @@ const Profile = () => {
       {topArtists && topTracks && playlists && (
         <main>
           <SectionWrapper title="Top artists" seeAllLink="/top-artists">
+            {/* {console.log(topArtists.items, "hello")} */}
             <ArtistsGrid artists={topArtists.items.slice(0, 10)} />
           </SectionWrapper>
 
