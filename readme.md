@@ -40,7 +40,20 @@ Part Three: User's Playlists
 
 
 ---
+## Installing instructions
+1. Clone this repository 
+2. Go to spotify developer to get client id and client secret
+3. Make a .env file with Client id and client secret and add this line:
+> Redirect_URI=http://localhost:8888/callback
+4. Add this redirect URI in your spotify app too.
+5. Open terminal in server folder and run the following command:
+> npm install
+6. Run the following command:
+> npm start
+7. Open the browser and go to http://localhost:3000/
+8. Login with spotify and you should see your profile and top tracks.
 
+---
 ## Future additions to be made
 
 1. Adding a recommender system which will prompt user some filter and after that will use spotify api based on those filters to get recommendations
