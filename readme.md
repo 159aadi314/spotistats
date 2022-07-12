@@ -60,5 +60,5 @@ Part Three: User's Playlists
 
 1. Adding a recommender system which will prompt user some filter and after that will use spotify api based on those filters to get recommendations
 2. Adding functionality to add recommended playlists and tracks to favourites.
-
+3. Adding a sound visualizer to the embedded iframe using p5js.
 
