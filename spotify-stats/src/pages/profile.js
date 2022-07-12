@@ -3,7 +3,7 @@ import { catchErrors } from '../utils';
 import { getUserProfile, getCurrentUserPlaylists, getTopArtists, getTopTracks } from '../spotify';
 import React from 'react';
 import { StyledHeader,  } from '../styles';
-import { SectionWrapper, ArtistsGrid, TrackList, PlaylistsGrid } from '../components';
+import { SectionWrapper, ArtistsGrid, TrackList, PlaylistsGrid, SearchBar } from '../components';
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
@@ -20,7 +20,7 @@ const Profile = () => {
       setTopArtists(userTopArtists.data);
       const userTopTracks = await getTopTracks();
       setTopTracks(userTopTracks.data);
-      console.log(userTopArtists.data);
+      console.log(userTopTracks.data);
     };
 
     catchErrors(fetchData());
@@ -29,6 +29,8 @@ const Profile = () => {
   return (
     <>
       {profile && (
+        <>
+        <SearchBar/>
         <StyledHeader type="user">
         <div className="header__inner">
           {profile.images.length && profile.images[0].url && (
@@ -48,6 +50,7 @@ const Profile = () => {
           </div>
         </div>
       </StyledHeader>
+      </>
       )}
       {topArtists && topTracks && playlists && (
         <main>

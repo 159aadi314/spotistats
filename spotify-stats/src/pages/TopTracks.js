@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getTopTracks } from '../spotify';
 import { catchErrors } from '../utils';
-import { SectionWrapper, TrackList } from '../components';
+import { SearchBar, SectionWrapper, TrackList } from '../components';
 import React from 'react';
 
 
@@ -20,6 +20,7 @@ const TopTracks = () => {
 
   return (
     <main>
+      <SearchBar/>
       <SectionWrapper title="Top Tracks" breadcrumb={true}>
 
         {topTracks && topTracks.items && (

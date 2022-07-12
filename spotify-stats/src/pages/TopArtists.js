@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getTopArtists } from '../spotify';
 import { catchErrors } from '../utils';
-import { ArtistsGrid, SectionWrapper} from '../components';
+import { ArtistsGrid, SearchBar, SectionWrapper} from '../components';
 import React from 'react';
 const TopArtists = () => {
   const [topArtists, setTopArtists] = useState(null);
@@ -18,6 +18,7 @@ const TopArtists = () => {
 
   return (
     <main>
+      <SearchBar/>
       <SectionWrapper title="Top Artists" breadcrumb={true}>
 
         {topArtists && topArtists.items && (

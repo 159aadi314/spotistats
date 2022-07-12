@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { catchErrors } from '../utils'
 import { getPlaylistById } from '../spotify';
-import { TrackList, SectionWrapper } from '../components';
+import { TrackList, SectionWrapper, SearchBar } from '../components';
 import { StyledHeader } from '../styles';
 import React from 'react';
 
@@ -56,6 +56,7 @@ const Playlist = () => {
     <>
       {playlist && (
         <>
+          <SearchBar/>
           <StyledHeader>
             <div className="header__inner">
               {playlist.images.length && playlist.images[0].url && (

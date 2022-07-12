@@ -32,6 +32,8 @@ Part Three: User's Playlists
 ## Search functionality and individual tracks pages
 ![Tracks Page](assets/TracksPage.png)
 * Note that user can also play the song on this page using the iframe presented
+![Search Bar with resulte](assets/Search.png)
+* Using search bar you can browse through the results to see the tracks and playlists
 ---
 
 ## Individual PlayList Page

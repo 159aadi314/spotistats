@@ -1,0 +1,16 @@
+input {
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+#search-bar{
+    display: inline-block;
+}
+

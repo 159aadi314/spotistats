@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-import { PlaylistsGrid, SectionWrapper } from "../components";
+import { PlaylistsGrid, SearchBar, SectionWrapper } from "../components";
 import { getCurrentUserPlaylists } from "../spotify";
 import { catchErrors } from "../utils";
 
@@ -15,6 +15,7 @@ const Playlists= ()=>{
     })
     return (
         <main>
+        <SearchBar/>
         <SectionWrapper title="Playlists" breadcrumb={true} seeAllLink='/playlists'>
             {playlists&& playlists.items&&<PlaylistsGrid playlists={playlists.items}/>}
         </SectionWrapper>

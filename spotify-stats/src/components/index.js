@@ -3,3 +3,4 @@ export {default as SectionWrapper} from './SectionWrapper';
 export {default as TrackList} from './TrackList';
 
 export { default as PlaylistsGrid } from './PlaylistGrid';
+export { default as SearchBar} from './SearchBar';
