@@ -28,7 +28,7 @@ const Track = () =>{
 
             setTrack(data);
             setArtists(data.artists);
-            console.log(data);
+            // console.log(data);
         }
         catchErrors(fetchData());
     },[])

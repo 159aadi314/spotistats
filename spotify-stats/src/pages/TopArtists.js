@@ -9,7 +9,7 @@ const TopArtists = () => {
   useEffect(() => {
     const fetchData = async () => {
       const { data } = await getTopArtists();
-      console.log(data);
+      // console.log(data);
       setTopArtists(data);
     };
 
