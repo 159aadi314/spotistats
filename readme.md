@@ -42,6 +42,12 @@ Part Three: User's Playlists
 
 
 ---
+
+## video 
+
+![video](assets/2022-07-12%2009-05-58.gif)
+
+---
 ## Installing instructions
 1. Clone this repository 
 2. Go to spotify developer to get client id and client secret
